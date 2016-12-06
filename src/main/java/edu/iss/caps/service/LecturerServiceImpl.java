@@ -2,18 +2,25 @@ package edu.iss.caps.service;
 
 import java.util.ArrayList;
 
+import javax.annotation.Resource;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import edu.iss.caps.model.Lecturer;
-import edu.iss.cats.model.Course;
+import edu.iss.caps.repository.LecturerRepository;
 
 public class LecturerServiceImpl implements LecturerService {
-
+	
+	@Resource
+	private LecturerRepository lecRepo;
+	
 	@Override
 	@Transactional
-	public ArrayList<Lecturer> searchAllLecturers()
+	public ArrayList<Lecturer> findAllLecturers()
 	{
-		
+			ArrayList<Lecturer> ul = (ArrayList<Lecturer>) lecRepo.findAll();
+			return ul;
+
 	}
 
 	@Override

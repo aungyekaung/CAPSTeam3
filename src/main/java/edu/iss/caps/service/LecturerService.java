@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import edu.iss.caps.model.Lecturer;
 
 public interface LecturerService {
-	ArrayList<Lecturer> searchAllLecturers();
+	ArrayList<Lecturer> findAllLecturers();
 
 	Lecturer findLecturer(Integer LecId);
 
